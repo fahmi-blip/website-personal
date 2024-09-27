@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!--Navigasi-->
@@ -27,7 +28,7 @@
     <div>
     <a class="back" href="shop.html"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
-    <div class="slider-container">
+    <div class="slider-container" data-aos="fade-up" data-aos-duration="1000">
         <div class="slider">
             <img src="Vero_Wallpaper_01_3840x2400.jpg" class="slide" style="display: block;">
             <img src="Vero_Wallpaper_02_3840x2400.jpg" class="slide">
@@ -39,11 +40,11 @@
     
 
     <div>
-    <h1 class="product-name">Moisturaizer</h1>
+    <h1 class="product-name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Moisturaizer</h1>
     </div>
     <div class="content">
     <!-- Product 1 -->
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_02_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -51,7 +52,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_04_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -59,7 +60,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_02_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -67,7 +68,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_01_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -75,7 +76,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_04_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -83,7 +84,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_03_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -91,7 +92,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_02_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -99,7 +100,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_01_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -107,7 +108,7 @@
             <div><a href="#popup">Selengkapnya</a></div>
             <button>Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="fade-up" data-aos-duration="1500">
             <img src="Vero_Wallpaper_03_3840x2400.jpg" alt="Product 1">
             <h3>Wireless Headphones</h3>
             <p>High-quality wireless headphones with noise cancellation.</p>
@@ -163,6 +164,12 @@ function showSlides(n) {
     slides[slideIndex].style.display = "block";
 }
     </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+
 
 </body>
 </html>
