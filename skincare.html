@@ -7,21 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        footer {
+ background-color: #000000;
+ color: #fff;
+ text-align: center;
+ padding: 20px 0;
+ margin-top: 90px;
+ }
+.navbar.white {
+color: white;}
+.navbar.white .logo,
+.navbar.white ul li a,
+.navbar.white .search-bar input,
+.navbar.white .search-bar i {
+color: white;
+}
+
+.navbar.white .search-bar input::placeholder {
+color: white;
+}
+
+.footer1{
+    margin-top: 20px;
+    padding-top: 0;
+}
+</style>
 </head>
 <body>
-    <!--Navigasi-->
-    <Nav class="navbar">
-        <h1 class="logo">Trois Messieurs</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="Brands.html">Brands</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search products...">
-        </div>
-    </Nav>
+   <!--Navigasi-->
+   <Nav class="navbar" id="navbar">
+    <h1 class="logo">Trois Messieurs</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="fashion.html">Fashion</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+</Nav>
     
     <div>
         <a class="back" href="shop.html"><i class="fa-solid fa-arrow-left"></i></a>
@@ -263,8 +290,9 @@
         <a class="gotopbtn" href="#"><i class="fa-solid fa-arrow-up"></i></a>
         <footer id="contact">
             <footer class="footer1">
-                <div><h1>Beauty Avenue</h1></div>
-                <div><p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p></div>
+                <div>
+                    <h1>Beauty Avenue</h1>
+                    <div><p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p></div>
                 <div class="separator-container"> 
                     <div class="separator"></div> 
                 </div>
@@ -369,8 +397,9 @@
                         </div>                    
                     </div>
                 </div>
+            </div>
         </footer>
-    </section>
+
 
     
 <script>
@@ -392,9 +421,25 @@
                 index = (index - 1 + slideCount) % slideCount; // Decrement index and loop back
                 showSlide();
             }
-    
             // Auto slide function
             setInterval(nextSlide, 3000);
+            
+        // Fungsi untuk mengecek posisi footer dan navbar
+    window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        var footer = document.getElementById('contact');
+
+        // Dapatkan posisi jarak dari atas halaman ke footer
+        var footerTop = footer.getBoundingClientRect().top;
+        var navbarBottom = navbar.getBoundingClientRect().bottom;
+
+        // Jika bagian bawah navbar mendekati atau berada di atas footer (berwarna hitam)
+        if (navbarBottom >= footerTop) {
+            navbar.classList.add('white');  // Ubah warna navbar menjadi putih
+        } else {
+            navbar.classList.remove('white');  // Kembalikan ke warna default
+        }
+    });
         </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
