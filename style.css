@@ -325,23 +325,7 @@ header {
     background: #fff;
     color: #000;
 }
-
-/* Responsive Adjustment */
-@media screen and (max-width: 768px) {
-    header {
-        height: auto; /* Ubah height ke auto untuk perangkat mobile */
-    }
-
-    .overlay h1 {
-        font-size: 60px; /* Ukuran font lebih kecil di mobile */
-    }
-
-    .overlay h3 {
-        font-size: 20px;
-    }
-}
     
-
 
 
 /*content*/
@@ -509,21 +493,18 @@ p {
 }
 
 .back{
-    position:fixed;
+    position:absolute;
     width: 40px;
     height: 40px;
     text-decoration: none;
     text-align: center;
     line-height: 40px;
-    color: #000;
+    color: #007BFF;
     font-size: 22px;
     left: 15px;
     top: 105px;
+    z-index: 1;
 }
-.back:hover{
-    color:#007bff;
-}
-
 /* slider produk*/
 
 .slider {
@@ -801,13 +782,6 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 600px) {
-    .popup {
-        max-width: 95%;
-        padding: 20px;
-    }
-}
 
 /* Popup visibility control */
 #login-popup:target {
@@ -1063,14 +1037,13 @@ input[type="submit"]:hover {
 .image-grid {
     display: flex;
     transition: transform 0.5s ease-in-out; /* Animasi geser */
-    width: calc(400px * 6); /* 6 gambar, setiap gambar 400px */
+    width: calc(440px * 6); /* 6 gambar, setiap gambar 400px */
 }
 
 .image-box {
     width: 33%;
     min-width: 400px;
     background-color: white;
-    padding: 10px;
     margin-right: 10px;
 }
 
@@ -1121,13 +1094,10 @@ input[type="submit"]:hover {
     text-decoration: none;
     text-align: center;
     line-height: 40px;
-    color: #000;
+    color: #007bff;
     font-size: 22px;
     border-radius: 100%;
 
-}
-.gotopbtn:hover{
-    color: #007bff;
 }
 
 /* Footer Section */
@@ -1371,11 +1341,53 @@ footer {
 }
 
 
+
+/* Ukuran Responsif untuk Tablet dan Desktop */
+
 /* Media Queries untuk Responsif */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
         align-items: center;
+    }
+    .search-bar{
+        display: none;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar ul {
+        flex-direction: row;
+    }
+    content{
+        padding: 5px;
+    }
+    .overlay h1{
+        text-align: center;
+        font-size: 65px;
+    }
+    .overlay h3{
+        font-size: 18px;
+    }
+    .slogan1 h1{
+        font-size: 65px;
+    }
+    .slogan1 h3{
+        font-size: 18px;
+    }
+    .slogan2 h1{
+        font-size: 65px;
+        text-align: left;
+    }
+    .slogan2 h3{
+        font-size: 18px;
+        text-align: left;
+    }
+    .slogan3 h1{
+        font-size: 65px;
+    }
+    .slogan3 h3{
+        font-size: 18px;
     }
 
     .contactInfo, 
@@ -1404,34 +1416,71 @@ footer {
     .footer1 h1 {
         font-size: 1.5em;
     }
-
+    .media i{
+        font-size: 20px;
+        margin-top: 5px;
+    }
     .footer1 p {
         font-size: 0.9em;
+    }
+    .overlay h1{
+        text-align: center;
+        font-size: 58px;
+    }
+    .overlay h3{
+        font-size: 17px;
+    }
+    .slogan1 h1{
+        font-size: 58px;
+        text-align: center;
+    }
+    .slogan1 h3{
+        font-size: 17px;
+        text-align: center;
+    }
+    .slogan2 h1{
+        font-size: 58px;
+        text-align: left;
+        margin-right: 5px;
+    }
+    .slogan2 h3{
+        font-size: 17px;
+        text-align: left;
+        margin-right: 5px;
+    }
+    .slogan3 h1{
+        font-size: 58px;
+        text-align: left;
+    }
+    .slogan3 h3{
+        font-size: 17px;
+        text-align: left;
     }
 
     .contactForm h2 {
         font-size: 20px;
     }
-}
-
-/* Ukuran Responsif untuk Tablet dan Desktop */
-@media (min-width: 769px) and (max-width: 1024px) {
-    body {
-        font-size: 16px;
+    .text p{
+        padding: 5px;
     }
-
-    .container {
-        padding: 20px;
+    .back{
+        color:#fff;
+        left: 8px;
+        top: 120px;
+        font-size: 20px;
     }
-}
-
-@media (min-width: 1025px) {
-    body {
-        font-size: 18px;
+    .slides{
+        margin-top: 15px;
     }
-
-    .container {
-        padding: 30px;
+    .popup__content{
+        width: 50vw;
+        height: 100vh;
+    }
+    .slider1{
+        height: 360px;
+    }
+    .image-box{
+        width: auto;
     }
 }
 
