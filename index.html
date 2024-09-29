@@ -9,34 +9,83 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <Nav class="navbar">
+<!-- Navbar -->
+<Nav class="navbar">
+    <div class="left-section">
         <h1 class="logo">Trois Messieurs</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="#">Brands</a></li>
-            <li><a href="#">Offers</a></li>
-        </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search products...">
+        <div><a href="#login-popup" class="login-btn">Login</a></div>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">Offers</a></li>
+    </ul>
+    <div class="search-bar">
+        <input type="text" name="search" placeholder="Search products..." aria-label="Search products...">
+        <a href="shop.html" class="search-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+    </div>
+    
+</Nav>
+<!-- Login Popup -->
+<div class="popup" id="login-popup">
+    <div class="popup__content">
+        <a href="index.html" class="popup__close">&times;</a>
+        <div class="containerlogin">
+            <h3 class="popup__header">Login</h3>
+            <form action="#">
+                <input type="text" placeholder="Masukkan email" required>
+                <input type="password" placeholder="Masukkan password" required>
+                <input type="submit" value="Login" class="button">
+            </form>
+            <div class="forgot-password">
+                <a href="#">Lupa Password?</a>
+            </div>
+            <div class="signup">
+                <span>Belum punya akun? <label for="check">Daftar</label></span>
+            </div>
         </div>
-    </Nav>
+    </div>
+</div>
 
     <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    const closeButton = document.querySelector('.popup__close');
+    const popup = document.getElementById('login-popup');
 
-        let lastScrollTop = 0;
+    // Close popup when the close button is clicked
+    closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        popup.style.opacity = '0';
+        popup.style.visibility = 'hidden';
+        history.pushState("", document.title, window.location.pathname);
+    });
 
+    // Close popup when clicking outside the content area
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            popup.style.opacity = '0';
+            popup.style.visibility = 'hidden';
+            history.pushState("", document.title, window.location.pathname);
+        }
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Animasi blok teks saat scroll
+let lastScrollTop = 0;
 const textBlocks = document.querySelectorAll('.text-block');
-
 
 textBlocks.forEach(block => {
     block.classList.add('visible');
@@ -47,13 +96,11 @@ window.addEventListener('scroll', function() {
 
     if (scrollTop > lastScrollTop) {
         textBlocks.forEach(block => {
-          
             block.classList.remove('pop-down');
             block.classList.add('pop-up');
         });
-    } else { 
+    } else {
         textBlocks.forEach(block => {
-            
             block.classList.remove('pop-up');
             block.classList.add('pop-down');
         });
@@ -61,11 +108,11 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+
+// Event listener untuk form submit
 document.getElementById('contactForm').addEventListener('submit', function() {
     // Form akan reload dan mengirimkan data
 });
-
-
 
     </script>
 
