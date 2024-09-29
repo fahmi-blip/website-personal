@@ -402,6 +402,29 @@ header {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    margin-top: 350px;
+    text-align: center;
+}
+
+.text-block {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.text-block.visible {
+    opacity: 1; 
+}
+
+.text-block.pop-up {
+    animation: popUp 0.5s ease forwards; 
+}
 
 @keyframes popUp {
     0% {
@@ -454,54 +477,61 @@ p {
     color:#007bff;
 }
 
-/* slider */
+/* slider shop content */
 
-.slider-container {
-    position: relative;
+.slider {
     width: 100%;
     max-width: 1000px;
-    margin:0 auto;
-
-}
-.slider {
-    display: flex;
+    position: relative;
     overflow: hidden;
     aspect-ratio: 16/9;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%, 0.25);
     border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
 
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Full width */
 }
 
 .slide {
-    width: 100%;
-    display: none;
+    min-width: 100%; /* Each slide takes full width */
+    
+    position: relative;
 }
 
-button.prev, button.next {
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    border: none;
     color: white;
-    font-size: 18px;
-    padding: 10px;
+    border: none;
     cursor: pointer;
+    padding: 10px;
     border-radius: 50%;
+    z-index: 1;
 }
-button.prev {
+
+.prev {
     left: 10px;
 }
-button.next {
+
+.next {
     right: 10px;
 }
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
 
 
-
-/* Category product*/
+/* Category product shop*/
 .product-page {
     display: flex;
     flex-wrap: wrap;
@@ -570,7 +600,7 @@ button:hover {
     line-height: 1.6;
 }
 
-/* product*/
+/* product di dalam shop*/
 
 .content {
     display: flex;
@@ -633,6 +663,8 @@ button:hover {
     background-color: #d35400;
     color:white;
 }
+
+/* pop up login*/
 .popup {
     width: 100%;
     max-width: 400px;
@@ -722,7 +754,6 @@ input[type="submit"]:hover {
     color: #007BFF;
     cursor: pointer;
 }
-
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 600px) {
     .popup {
@@ -730,13 +761,11 @@ input[type="submit"]:hover {
         padding: 20px;
     }
 }
-
 /* Popup visibility control */
 #login-popup:target {
     opacity: 1;
     visibility: visible;
 }
-
 /* Popup Close Button */
 .popup__close {
     position: absolute;
@@ -803,9 +832,238 @@ input[type="submit"]:hover {
 .popup__close:hover,
 .popup__close:active{
     color: #555;
-
 }
 
+/* popup selengkapnya */
+.popup1{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+.popup__content1{
+    width:50%;
+    background-color: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.25);
+    opacity: 0;
+    transition: all .5s .1s;
+}
+.popup__img1{
+    display: flex;
+    width:100%;
+    margin-bottom: 15px;
+}
+.popup__img1 img{
+    display: block;
+    width: 100%;
+}
+.popup__header1{
+    text-align: center;
+    text-transform: uppercase;   
+    color: #555;
+}
+.popup__header1 h1{
+    font-size: 20px;
+}
+.popup__text1 {
+    padding: 0 36px;
+    line-height: 1.4;
+}
+.popup__text1 p:not(:last-child){
+    margin-bottom: 16px;
+}
+#popup1:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup2:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup3:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup4:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup5:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup6:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup7:target{
+    opacity: 1;
+    visibility: visible;
+}
+#popup8:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+#popup1:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup2:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup3:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup4:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup5:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup6:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup7:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+#popup8:target .popup__content1{
+    opacity: 1;
+    transform: translate(-50%, -50% ) scale(1);
+}
+.popup__close:link,
+.popup__close:visited{
+    position:absolute;
+    top: 12px;
+    right: 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1;
+    transition: all .3s;
+}
+.popup__close:hover,
+.popup__close:active{
+    color: #555;
+}
+
+/*slider menu fashion*/
+.slider1 {
+    width: 100%;
+    height: 800px; /* Atur tinggi slider sesuai kebutuhan */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides1 {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%; /* Sesuaikan dengan jumlah gambar */
+}
+
+.slide1 {
+    position: relative; /* Memungkinkan posisi relatif untuk tombol */
+    flex-shrink: 0; /* Menghindari gambar mengecil */
+    width: 100%; /* Setiap slide memenuhi lebar slider */
+}
+
+.slides1 img {
+    width: 100%; /* Gambar memenuhi lebar slider */
+    height: auto; /* Menjaga proporsi gambar */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+.container3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.paragraph {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.slider-container3 {
+    overflow: hidden; /* Menyembunyikan gambar yang keluar dari area tampilan */
+    width: 100%;
+    position: relative;
+}
+
+.image-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animasi geser */
+    width: calc(400px * 6); /* 6 gambar, setiap gambar 400px */
+}
+
+.image-box {
+    width: 33%;
+    min-width: 400px;
+    background-color: white;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+}
+
+/* Tombol panah */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.arrow-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Tombol Previous (Kiri) */
+.arrow-button.prev {
+    left: 10px;
+}
+
+/* Tombol Next (Kanan) */
+.arrow-button.next {
+    right: 10px;
+}
+
+/* button up*/
 .gotopbtn{
     position:fixed;
     width: 40px;
