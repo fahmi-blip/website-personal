@@ -16,6 +16,33 @@
     display: flex;
     align-items: center;
 }
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang semi-transparan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Pastikan loading muncul di atas semua elemen */
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Warna latar belakang */
+    border-top: 8px solid #3498db; /* Warna bagian atas loader */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Animasi putar */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* Navigasi */
 .navbar {
     display: flex;
@@ -25,7 +52,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px;
-    margin: 8px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: background-color 1s ease;
@@ -153,20 +179,13 @@
     border-color: #4CAF50;
 }
 
-/* Icon search */
-.search-bar i {
-    position: absolute;
-    right: 10px; /* Menempatkan ikon search di sebelah kanan */
-    color: black;
-    transition: color 1s ease;
-}
-
 .navbar.scrolled .search-bar input,
 .navbar.scrolled .search-bar input::placeholder,
 .navbar.scrolled .search-bar i {
     color: white;
     border-color: white;
 }
+
 /* header */
 header {
     width: 100%;
@@ -296,10 +315,9 @@ header {
         font-size: 20px;
     }
 }
-    
 
 
-/content/
+/*content*/
 .photo2 {
     width: 100%;
     height: 1000px;
@@ -338,7 +356,7 @@ header {
 .photo3 {
     width: 100%;
     height: 1000px;
-    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0, 0, 0, 0.2)),url(portrait-joyful-woman-with-yellow-cloth-nature.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0, 0, 0, 0.2)),url(beautiful-young-woman-with-brown-hair-smiling-outdoors-generated-by-ai.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -401,7 +419,6 @@ header {
     font-size: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
-
 .container {
     display: flex;
     justify-content: space-around;
@@ -437,6 +454,9 @@ header {
     }
 }
 
+.text-block.pop-down {
+    animation: popDown 0.5s ease forwards; 
+}
 
 @keyframes popDown {
     0% {
@@ -458,7 +478,7 @@ h1 {
 p {
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .back{
@@ -477,7 +497,7 @@ p {
     color:#007bff;
 }
 
-/* slider shop content */
+/* slider produk*/
 
 .slider {
     width: 100%;
@@ -529,7 +549,6 @@ p {
 .next {
     right: 10px;
 }
-
 
 /* Category product shop*/
 .product-page {
@@ -754,6 +773,7 @@ input[type="submit"]:hover {
     color: #007BFF;
     cursor: pointer;
 }
+
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 600px) {
     .popup {
@@ -761,12 +781,13 @@ input[type="submit"]:hover {
         padding: 20px;
     }
 }
+
 /* Popup visibility control */
 #login-popup:target {
     opacity: 1;
     visibility: visible;
 }
-/* Popup Close Button */
+
 .popup__close {
     position: absolute;
     top: 12px;
@@ -832,6 +853,7 @@ input[type="submit"]:hover {
 .popup__close:hover,
 .popup__close:active{
     color: #555;
+
 }
 
 /* popup selengkapnya */
@@ -963,7 +985,7 @@ input[type="submit"]:hover {
     color: #555;
 }
 
-/*slider menu fashion*/
+/*slider menu fashion */
 .slider1 {
     width: 100%;
     height: 800px; /* Atur tinggi slider sesuai kebutuhan */
@@ -1063,7 +1085,6 @@ input[type="submit"]:hover {
     right: 10px;
 }
 
-/* button up*/
 .gotopbtn{
     position:fixed;
     width: 40px;
@@ -1323,75 +1344,67 @@ footer {
 }
 
 
+/* Media Queries untuk Responsif */
 @media (max-width: 768px) {
-    .contact {
-        padding: 50px 20px;
-    }
-
     .container {
         flex-direction: column;
         align-items: center;
     }
 
     .contactInfo, 
-    .contactForm {
-        width: 100%;
+    .contactForm, 
+    .location-container {
+        width: 100%; /* Memastikan lebar penuh */
+        margin-bottom: 20px; /* Jarak antara bagian */
     }
 
     .info-item {
-        text-align: center;
         flex-direction: column;
+        align-items: center; /* Pusatkan isi */
+        text-align: center; /* Rata tengah */
     }
 
     .info-item .icon {
         margin-bottom: 10px;
     }
-}
 
-@media (max-width: 788px) {
-    .contact {
-        padding: 50px 20px; 
-    }
-    .container {
-        flex-direction: column;
-    }
-    .container .contactInfo {
-        margin-bottom: 40px;
-    }
-    .container .contactInfo,
-    .contactForm {
-        width: 100%;
-    }
-    .contactForm {
-        order: 2; 
+    .location-container {
+        width: 100%; /* Memastikan lebar penuh */
     }
 }
 
-@media (max-width: 768px) {
-    header {
-        padding: 20px 0;
-    }
-    content {
-        padding: 15px;
-    }
-}
 @media (max-width: 480px) {
-    header {
-        padding: 30px 0;
-        font-size: 1.2em;
+    .footer1 h1 {
+        font-size: 1.5em;
     }
-    content {
-        padding: 10px;
+
+    .footer1 p {
         font-size: 0.9em;
     }
+
+    .contactForm h2 {
+        font-size: 20px;
+    }
 }
-@media  screen and (max-width: 900px) {
-    .footer1 .footer-top .container ,
-    .footer1 .footer-bottom .container ,
-    
-    .footer1 .col2 {
-        justify-content: flex-start;
-        flex-wrap:  wrap;
+
+/* Ukuran Responsif untuk Tablet dan Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 30px;
     }
 }
 
