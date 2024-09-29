@@ -5,23 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        footer {
+ background-color: #000000;
+ color: #fff;
+ text-align: center;
+ padding: 20px 0;
+ margin-top: 90px;
+ }
+.navbar.white {
+color: white;}
+.navbar.white .logo,
+.navbar.white ul li a,
+.navbar.white .search-bar input,
+.navbar.white .search-bar i {
+color: white;
+}
+
+.navbar.white .search-bar input::placeholder {
+color: white;
+}
+
+.footer1{
+    margin-top: 20px;
+    padding-top: 0;
+}
+</style>
 </head>
 <body>
  
-    <!--Navigasi-->
-    <Nav class="navbar">
-        <h1 class="logo">Trois Messieurs</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="fashion.html">Fashion</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search products...">
-        </div>
-    </Nav>
+   <!--Navigasi-->
+   <Nav class="navbar" id="navbar">
+    <h1 class="logo">Trois Messieurs</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="fashion.html">Fashion</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+</Nav>
 
+<!--image slider-->
     <div class="slider1">
         <div class="slides1">
             <div class="slide1">
@@ -48,8 +78,7 @@
 
               <!-- Tombol Panah Kiri dan Kanan -->
               <button class="arrow-button prev" id="prevBtn">&#10094;</button>
-              <button class="arrow-button next" id="nextBtn">&#10095;</button>
-            
+              <button class="arrow-button next" id="nextBtn">&#10095;</button> 
 
         <!-- Slider Container -->
         <div class="slider-container3">
@@ -76,118 +105,119 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <a class="gotopbtn" href="#"><i class="fa-solid fa-arrow-up"></i></a>
-    <footer id="contact">
-        <footer class="footer1" >
-            <div><h1>Beauty Avenue</h1></div>
-            <div><p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p></div>
-            <div class="separator-container"> 
-                <div class="separator"></div> 
-            </div>
-            <div class="container1">
-                <ul class="media">
-                    <li>
-                        <a href="https://www.facebook.com/share/iXYYoSCeK6kDwRgs/?mibextid=LQQJ4d">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/StaDsa_?t=--axQ2om2_RRJ9y4U9ax5g&s=09">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/troismessiours?igsh=MXVqbDZubHU4YnN2bw==">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/@gaktaumales3886?si=wH4oECAWRQDdsEOZ">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.tiktok.com/@fr.anonim1?_t=8q6P4KegIAa&_r=1">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="separator-container"> 
-                <div class="separator"></div> 
-            </div>
-            <div class="contact">
-                <div class="container">
-                    <!-- New Location Container -->
-                    <div class="location-container">
-                        <h2>Our Locations</h2>
-                        <div class="location-box">
-                            <h3>Location 1</h3>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345097525!2d144.95373531584426!3d-37.81627997975192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11c841%3A0x5045675218ceed30!2sLocation%201!5e0!3m2!1sen!2sau!4v1616238311083!5m2!1sen!2sau" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <!-- Footer Section -->
+        <a class="gotopbtn" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        <footer id="contact">
+            <footer class="footer1">
+                <div>
+                    <h1>Beauty Avenue</h1>
+                    <div><p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p></div>
+                <div class="separator-container"> 
+                    <div class="separator"></div> 
+                </div>
+                <div class="container1">
+                    <ul class="media">
+                        <li>
+                            <a href="https://www.facebook.com/share/iXYYoSCeK6kDwRgs/?mibextid=LQQJ4d">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/StaDsa_?t=--axQ2om2_RRJ9y4U9ax5g&s=09">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/troismessiours?igsh=MXVqbDZubHU4YnN2bw==">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/@gaktaumales3886?si=wH4oECAWRQDdsEOZ">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/@fr.anonim1?_t=8q6P4KegIAa&_r=1">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="separator-container"> 
+                    <div class="separator"></div> 
+                </div>
+                <div class="contact">
+                    <div class="container">
+                        <!-- New Location Container -->
+                        <div class="location-container">
+                            <h2>Our Locations</h2>
+                            <div class="location-box">
+                                <h3>Location 1</h3>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345097525!2d144.95373531584426!3d-37.81627997975192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11c841%3A0x5045675218ceed30!2sLocation%201!5e0!3m2!1sen!2sau!4v1616238311083!5m2!1sen!2sau" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                    
                         </div>
                 
-                    </div>
-            
-                    <div class="contactInfo">
-                        <div class="content">
-                            <h2>Contact Us</h2>
-                        </div>
-                        <div class="box">
-                            <!-- Phone and Email in the same row -->
-                            <div class="info-row">
-                                <!-- Phone Section -->
-                                <div class="info-item">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <div class="contactInfo">
+                            <div class="content">
+                                <h2>Contact Us</h2>
+                            </div>
+                            <div class="box">
+                                <!-- Phone and Email in the same row -->
+                                <div class="info-row">
+                                    <!-- Phone Section -->
+                                    <div class="info-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h3>Phone</h3>
+                                            <p>+6281331676153</p>
+                                            <p>+6281331676153</p>
+                                            <p>+6281331676153</p>
+                                        </div>
                                     </div>
-                                    <div class="text">
-                                        <h3>Phone</h3>
-                                        <p>+6281331676153</p>
-                                        <p>+6281331676153</p>
-                                        <p>+6281331676153</p>
+                            
+                                    <!-- Email Section -->
+                                    <div class="info-item">
+                                        <div class="icon">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h3>Email</h3>
+                                            <p>putera.gadu@gmail.com</p>
+                                            <p>putera.gadu@gmail.com</p>
+                                            <p>putera.gadu@gmail.com</p>
+                                        </div>
                                     </div>
                                 </div>
-                        
-                                <!-- Email Section -->
-                                <div class="info-item">
-                                    <div class="icon">
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h3>Email</h3>
-                                        <p>putera.gadu@gmail.com</p>
-                                        <p>putera.gadu@gmail.com</p>
-                                        <p>putera.gadu@gmail.com</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                        <div class="contactForm" id="contactForm">
+                            <form>
+                                <h2>Send Message</h2>
+                                <div class="inputBox">
+                                    <span>Full Name</span>
+                                    <input type="text" name="name" required="required">
+                                </div>
+                                <div class="inputBox">
+                                    <span>Email</span>
+                                    <input type="email" name="email" required="required">
+                                </div>
+                                <div class="inputBox">
+                                    <span>Comment</span>
+                                    <input type="comment" name="comment" required="required">
+                                </div>
+                                <div class="inputBox">
+                                    <input type="submit" name="submit" value="Send">
+                                </div>
+                            </form>
+                        </div>                    
                     </div>
-                    <div class="contactForm" id="contactForm">
-                        <form>
-                            <h2>Send Message</h2>
-                            <div class="inputBox">
-                                <span>Full Name</span>
-                                <input type="text" name="name" required="required">
-                            </div>
-                            <div class="inputBox">
-                                <span>Email</span>
-                                <input type="email" name="email" required="required">
-                            </div>
-                            <div class="inputBox">
-                                <span>Comment</span>
-                                <input type="comment" name="comment" required="required">
-                            </div>
-                            <div class="inputBox">
-                                <input type="submit" name="submit" value="Send">
-                            </div>
-                        </form>
-                    </div>                    
                 </div>
             </div>
-    </footer>
-
+        </footer>
 
     <script>
         let currentIndex = 0;
@@ -235,6 +265,24 @@ const nextBtn = document.getElementById('nextBtn');
                 imageGrid.style.transform = `translateX(-${currentIndex1 * imageBoxWidth}px)`;
             }
         });
+
+
+         // Fungsi untuk mengecek posisi footer dan navbar
+    window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        var footer = document.getElementById('contact');
+
+        // Dapatkan posisi jarak dari atas halaman ke footer
+        var footerTop = footer.getBoundingClientRect().top;
+        var navbarBottom = navbar.getBoundingClientRect().bottom;
+
+        // Jika bagian bawah navbar mendekati atau berada di atas footer (berwarna hitam)
+        if (navbarBottom >= footerTop) {
+            navbar.classList.add('white');  // Ubah warna navbar menjadi putih
+        } else {
+            navbar.classList.remove('white');  // Kembalikan ke warna default
+        }
+    });
     </script>
 
 </body>
