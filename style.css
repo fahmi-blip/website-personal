@@ -57,6 +57,7 @@
     transition: background-color 1s ease;
 }
 
+
 /* Bagian kiri untuk logo dan tombol login */
 .left-section {
     display: flex;
@@ -202,6 +203,15 @@ input[type="text"].error::placeholder {
 
 .search-bar input:focus {
     border-color: #4CAF50;
+}
+
+/* Icon search */
+.search-bar i {
+    right: 10px; /* Menempatkan ikon search di sebelah kanan */
+    color: black;
+    transition: color 1s ease;
+    margin-bottom: 13px;
+    margin-left: 10px;
 }
 
 .navbar.scrolled .search-bar input,
@@ -1412,7 +1422,7 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 490px) {
     .footer1 h1 {
         font-size: 1.5em;
     }
@@ -1481,6 +1491,12 @@ footer {
     }
     .image-box{
         width: auto;
+    }
+    .gotopbtn{
+        position: fixed;
+    }
+    #login-popup{
+
     }
 }
 
